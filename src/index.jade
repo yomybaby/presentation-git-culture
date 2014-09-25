@@ -3,7 +3,7 @@ html
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
-    title Git 제대로 써보기
+    title Git으로 살펴보는 오픈소스 개발 문화
 
     // build:css styles/styles.css
     //- Check out 'src/bower_components/prism/themes/' for available themes
@@ -333,13 +333,13 @@ html
         img.w600(src="./images/iloveoct.jpg")
 
       section(data-bespoke-state='emphatic')
-        h1
+        h2
           i.fa.fa-wrench.fa-4x &nbsp;
           i.fa.fa-caret-right.fa-3x &nbsp;
           i.fa.fa-group.fa-4x.red
 
       section(data-bespoke-state='reveal')
-        h1
+        h2
           i.fa.fa-cogs.fa-5x
         h3 도구가 개발 문화에 끼친 영향?
 
@@ -375,734 +375,105 @@ html
           i.fa.fa-search.fa-5x
         h3 Github 들여다보기
 
-
-
-
-
-
-
-
-      section(data-bespoke-state='stair')
-        span.small_title 목차
-        h2 
-          //- i.fa.fa-list-alt
-          | 목차
-        ui.fa-ul
-          li
-            i.fa-li.fa.fa-file-text-o
-            a.whitelink(href="#withfile")
-              | 파일과 함께하는 일상
-          li
-            i.fa-li.fa.fa-wrench
-            a.whitelink(href="#toolHistory")
-              | 파일 관리 도구의 탄생
-          li
-            i.fa-li.fa.fa-git-square
-            a.whitelink(href="#gitOverview")
-              | 바로 알기
-          li
-            i.fa-li.fa.fa-camera-retro
-            a.whitelink(href="#doGit")
-              | 기록하기
-          li
-            i.fa-li.fa.fa-code-fork
-            a.whitelink(href="#branch")
-              | 가지치기(Branch)
-          li
-            i.fa-li.fa.fa-backward
-            a.whitelink(href="#undo")
-              | 되돌리기
-          li
-            i.fa-li.fa.fa-cloud-upload
-            a.whitelink(href="#remote")
-              | 원격 저장소
-          li
-            i.fa-li.fa.fa-group
-            a.whitelink(href="#workflow")
-              | Workflow
-
-      section(data-bespoke-state='hello')
-        span.small_title 여러분이 궁금합니다.
-        h2 당신은 누구십니까?^^
-        ul 
-          li 어떤 일을 하시는 개발자?
-          li Git을 어떻게(Workflow/Branch전략) 사용하고 계신가요?
-          li 
-            i.fa.fa-desktop
-            |  컴퓨터로 업무보시죠?
-      
-      
-
-      - smallTitle="Git 주요 개념 맛보기"
-      section(data-bespoke-state='reveal',data-bespoke-hash="examGit")
-        h1
-          i.fa.fa-cutlery.fa-3x
-        h3= smallTitle
-
       section(data-bespoke-state='emphatic')
-        span.small_title= smallTitle
-        h2 
-          i.fa.fa-refresh
-          |  역지사지
-        p git의 만드는 토발즈의 마음이 되어..
-      
-      - smallTitle="Git으로 기록하기"
-      section(data-bespoke-state='reveal',data-bespoke-hash="doGit")
-        h1
-          i.fa.fa-camera-retro.fa-3x
-        h3= smallTitle
-
-      section(data-bespoke-state='emphatic',data-bespoke-hash="install")
-        span.small_title= smallTitle
-        h2 
-          i.fa.fa-gear
-          |  설치 먼저
-        br
-        ul.big_ul
-          li
-            | Git : 
-            br
-            a(href="http://git-scm.com/") git-scm.com
-          li
-            | Source Tree : 
-            br
-            a(href="http://www.sourcetreeapp.com/") sourcetreeapp.com
-          li
-            | Sublime Text : 
-            br
-            a(href="http://www.sublimetext.com/2") sublimetext.com/2
-        h2
-          i.fa.fa-github  Github.com 계정 만들기
-
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2 
-          i.fa.fa-git
-          |  저장소 만들기
-        pre.dark
-          code.language-bash.
-            git init
-        img.w300.bullet.brighter(src="http://strongloop.com/wp-content/uploads/2014/04/mind-blowing_1454.gif.pagespeed.ce.hxxM_pKi8A.gif")
-        pre.small_font.dark.bullet
-          code.language-bash
-            :markup
-              git init <directory>
-              git init --bare <directory>
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2 일단 파일 만들고 커밋해보자
-        pre.dark
-          code.language-bash
-            :markup
-              git add first.txt
-              git commit -m "first commit"
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2
-          i.fa.fa-camera-retro.fa-2x.red
+        h1 Fork
+        h2 누구나 소스를 볼 수 있으며 내
           br
-          span.red Commit
-          | 은 
-          span.red Snapshot
-          | 이다.
+          | 저장소에 fork해서 수정할 수 있다.
+        aside.
+          누구나 실제 원본에 영향을 미치지 않고 내 마음대로 수정(개선)할 수 있다.
+      section(data-bespoke-state='emphatic')
+        h1 Pull request
+        h2 누구나 반영을 요청을 할 수 있고 
+          br
+          | 그것은 함께 공개적으로 논의 된다.
+        aside.
+          우리는 실생활에 이런 시스템이 있던가?
+          요청 절차도 복잡하고 내 요청과 비슷한 요청이 얼마나 있는지 모르며 어떻게 진행되고 있는지 조차 알수 없다.
+      section(data-bespoke-state='emphatic')
+        h1 diff
+        h2 차이점을 쉽게 비교할 수 있다.
+        aside.
+          보험약관을 보면 비슷하면서도 다르다. 근데 우리는 다른 차이점을 쉽게 비교할 수 있나?
+      section(data-bespoke-state='emphatic')
+        h1 link, mention
+        h2 모두 연결할 수 있다.
 
-      section(data-bespoke-state='staging')
-        span.small_title.bullet= smallTitle
+      section(data-bespoke-state='reveal')
+        h1 실제 예
+
+      section(data-bespoke-state='emphatic')
+        h2 iPhone 5
+        img.w500(src="./images/iphone5.jpg")
+      section(data-bespoke-state='emphatic')
+        img.w200(src="./images/iphone_tall.jpg")
+      section(data-bespoke-state='emphatic')
+        img.w500(src="./images/iphone101.jpg")
+      section(data-bespoke-state='emphatic')
+        a(href="https://github.com/appcelerator/alloy/pull/263",target="_blank")
+          img.w500(src="./images/gist.jpg")
+      section(data-bespoke-state='emphatic')
+        a(href="https://github.com/appcelerator/alloy/pull/263",target="_blank")
+          img.w500(src="./images/alloy_pr.jpg")
+        aside.
+          - fork 해서 pull request 보냄
+          - diff를 통해 다른 이들이 내 코드에 대해 쉽게 이해함
+          - 논의의 시작 더 나은 아이디어
+          - 투표까지
+          - 결국에는 더나은 새로운 방식으로 다른 담당자에 의해서 구현
+          - 실제 제품에 반영
+
+      section(data-bespoke-state='reveal')
         h2 
-          span.red add
-          | 는 
-          span.green Stage 
-          | 위로 올리는 것
-        //img.w400(src="http://fc02.deviantart.net/fs70/f/2011/004/5/c/glee_stage_by_periru3-d36gik6.jpg")
-      
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2 기록 절차
-        img.w400(src="addcommit.png")
-        pre.dark
-          code.language-bash
-            :markup
-              git add first.txt
-              git commit -m "first commit"
-        pre.dark.bullet
-          code.language-bash
-            :markup
-              git commit -a -m "first commit"
+          i.fa.fa-sort-alpha-asc.fa-4x
+        h3 정리해보자면
 
       section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2 Commit
-          br
-          | 무엇이 생기고 어떤게 기록되나?
-        ul.fa-ul
-          li.bullet
-            i.fa-li.fa.fa-camera-retro
-            | Blob : 파일을 찰칵
-          li.bullet
-            i.fa-li.fa.fa-camera-retro
-            | Tree object : 폴더구조를 찰칵
-          li.bullet
-            i.fa-li.fa.fa-camera-retro
-            | Commit object : Tree의 hash와 Commit 부가정보를 담아 찰칵
-          //- li.bullet
-          //-   i.fa-li.fa.fa-hand-o-right
-          //-   | Tag object : Commit을 가리키는 Pointer
-          //- li.bullet
-          //-   i.fa-li.fa.fa-hand-o-right
-          //-   | Reference : Commit이나 Tag를 가리키는 Pointer
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        //- ul.fa-ul
-        //-   li
-        //-     i.fa-li.fa.fa-file-text-o
-        //-     | README
-        //-   li
-        //-     i.fa-li.fa.fa-file-text-o
-        //-     | src/hello.c
-        img.w150(src="tree_example.png")
-        br
-        img.w400(src="http://wildlyinaccurate.com/wp-content/uploads/2014/05/tree-graph.png")
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2 현재 상태 및 기록 살펴보기
-        pre.dark
-          code.language-bash
-            :markup
-              git status
-              git log
-              git log -p
-              git reflog
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2 파일 상태의 변화
-        ul.fa-ul
-          li.bullet
-            i.fa-li.fa.fa-file-text-o
-            | Untracked
-          li.bullet
-            i.fa-li.fa.fa-file-text-o
-            | Staged
-          li.bullet
-            i.fa-li.fa.fa-file-text-o
-            | Unmodified
-          li.bullet
-            i.fa-li.fa.fa-file-text-o
-            | Modified
-      
-      - smallTitle="Git으로 가지치기(Branch)"
-      section(data-bespoke-state='reveal',data-bespoke-hash="branch")
-        h1
-          i.fa.fa-code-fork.fa-3x
-        h3= smallTitle
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h3 Q. 원래 코드와 상관없이 개발을 진행하고 싶을 때 어떻게?
-        ul.fa-ul
-          li.bullet
-            | A. 프로젝트 
-            i.fa.fa-folder-open-o
-            |  폴더를 통째로 복사한다? (ex.myproject_원본)
-        h2.bullet 이제 수동작업은 그만!
-        h3.bullet
-          strong 
-            span.red 빠르고 값싼 Branch
-            | 는 Git 최고의 장점
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2 
-          i.fa.fa-code-fork
-          |  Branch의 실체 공개!
-        ul.fa-ul
-          li.bullet
-            i.fa-li.fa.fa-file-text-o
-            | 파일 1개로 구성
-          li.bullet
-            i.fa-li.fa.fa-file-text-o
-            | 파일명 == Branch 명
-          li.bullet
-            i.fa-li.fa.fa-file-text-o
-            | 내용 : 가리키는 커밋의 Hash
-          li.bullet
-            i.fa-li.fa.fa-file-text-o
-            | 용량 : 41 Byte
-            
-        h3.bullet 단순 포인터! 겁나 싸죠?
-      
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2 
-          i.fa.fa-code-fork
-          |  Branch 명령어 사용법
-        pre.dark
-          code.language-bash
-            :markup
-              git branch
-              git branch <branch>
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2 
-          i.fa.fa-check-circle-o 
-          |  Checkout 명령어를
-          br
-          | 이용한 
-          i.fa.fa-code-fork
-          |  Branch 다루기
-        pre.dark
-          code.language-bash
-            :markup
-              git checkout -b <branch>
-              git checkout <branch>
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2 Branch와 비슷하지만 다른 것
-        ul.fa-ul
-          li
-            i.fa.fa-li.fa-tag
-            | tag : 특정 위치를 나타내는 포인트(commit을 가리킴)
-          li 
-            i.fa.fa-li.fa-crosshairs
-            | HEAD : 현재 위치를 나타내는 포인트(branch나 commit을 가리킴)
-        br
-        h3.bullet 성격 정리..
-        ul.fa-ul.small_title.bullet
-          li
-            i.fa.fa-li.fa-tag
-            | tag : 고정
-          li 
-            i.fa.fa-li.fa-code-fork
-            | branch : 반고정
-          li
-            i.fa.fa-li.fa-crosshairs
-            | HEAD : 고정 아님
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2 
-          i.fa.fa-code-fork.fa-rotate-180
-          |  Merge
-          br
-          | 이용한 Branch 다루기
-        pre.dark
-          code.language-bash
-            :markup
-              git merge <branch>
-              git merge --no-ff <branch>
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h4 
-          i.fa.fa-code-fork.fa-rotate-180
-          |  Merge의 종류 1.
-        h2 Fast-Forward Merge
-        img(src="./images/07.svg")
-      
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h4 
-          i.fa.fa-code-fork.fa-rotate-180
-          |  Merge의 종류 2.
-        h2 3-way merge
-        img.w800(src="./images/08.svg")
-
-      - smallTitle="Git으로 되돌리기"
-      section(data-bespoke-state='reveal',data-bespoke-hash="undo")
-        h1
-          i.fa.fa-backward.fa-3x
-        h3= smallTitle
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2 방법 1. Checkout
-        p 전체 혹은 특정파일을 특정 커밋의 상태로 되돌린다.
-        pre.dark
-          code.language-bash
-            :markup
-              git checkout <commit>
-              git checkout <commit> <file>
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2 방법 2. Revert
-        p 특정 Commit을 되돌리는(Undo)하는 Commit을 생성한다.
-        pre.dark
-          code.language-bash
-            :markup
-              git revert <commit>
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2 Checkout
-        p 
-          strong.red Commit 전 
-          | 변경사항은 Checkout!
-          br
-          | 커밋을 만들지 않고 Working Directory의 일부 혹은 전체 내용이 바뀜
-        h2 Revert
-        p 
-          strong.red Commit 후 
-          | 커밋 내용을 통째로 되돌릴때는 Revert!
-          br
-          | 되돌리는 내용을 담은 커밋을 발생시킨다.
-        
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2 
-          i.fa.fa-warning.fa-2x.red
-          br
-          | 방법 3. Reset
-        p 
-          span.red 이용에 주의해야 함. 위험한(?) 명령어
-          br
-          | File을 Reset하는 것은 Unstaged 상태로 만드는 것
-          br
-          | Commit Reset은 현재 Branch를 해당 Commit으로 이동하는 것
-        pre.dark
-          code.language-bash
-            :markup
-              git reset <file>
-              git reset <commit>
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2 Revert vs. Reset
-        img(src="./images/revert_vs_reset.svg")
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2 Checkout vs. Reset
         h3
-          i.fa.fa-check
-            :markup
-              Checkout <commit>
-        p HEAD만 다른 곳으로 이동할뿐
+          ul
+            li.bullet 공개하고
+            li.bullet 수정하고
+            li.bullet 요청하고
+            li.bullet 논의하고
+            li.bullet 반영하는
+        h3.bullet 이 모든 과정이
+        h1.bullet Open Access
+
+
+      section(data-bespoke-state='emphatic')
+        h3 오픈하면
+        h2 얻을 수 있어요
         h3
-          i.fa.fa-undo
-            :markup
-              Reset <commit>
-        p Branch와 Head가 다른 곳으로 이동! Branch의 기록을 뒤바꾸는 일.
+          ul.bullet
+            li.bullet 버그 찾기
+            li.bullet 아이디어와 해결책
+        h2.bullet "보고 있는 눈이 충분히 많으면 찾지 못할 버그는 없다"
+      section(data-bespoke-state='emphatic')
+        h2 빠른 발전, 짧아져가는 생명주기
+        h3 오픈하지 않으면...
 
       section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2 기타 유용한 명령어
-        pre.dark.small_font
-          code.language-bash
-            :markup
-              git clean -f
-        p 
-          i.fa.fa-gift
-          strong  clean
-          | : Untracked File을 지움, .gitignore에 명시된 파일은 안지움
-        br
-        pre.dark.small_font
-          code.language-bash.
-            git commit <strong>--ammend</strong> -m "You can change commit message"
-        p 
-          i.fa.fa-gift 
-          strong  ammend
-          | : 방금 전 commit을 다시 하는 간단한 방법
-        br
-        pre.dark.small_font
-          code.language-bash
-            :markup
-              git stash
-        p 
-          i.fa.fa-gift 
-          strong  stash
-          | : Commit 되지 않은 변경사항을 따로 저장해두고 다음에 적용할 때
-
-      
-      - smallTitle="Git 원격 저장소"
-      section(data-bespoke-state='reveal',data-bespoke-hash="remote")
-        h1
-          i.fa.fa-cloud-upload.fa-3x
-        h3= smallTitle
+        h1 아끼다
+        h1 
+          span.red 똥
+          | 된다
+        img.w200(src="./images/ddong.png")
 
       section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2 Local? Remote?
-        h3
-          i.fa.fa-desktop.fa-2x
-        img.w300(src="https://gp1.wac.edgecastcdn.net/8029C4/wac-small/wac/landing/git/tutorial/remote-repositories/pageSections/0/contentColumnTwo/0/imageBinary/git-tutorial-remote-repos.png",target="_blank")
-        h3.bullet
-          i.fa.fa-bitbucket.fa-2x
-          | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          i.fa.fa-github-alt.fa-2x
+        h2.bullet 당신의 쥐고 있는 그것은?
+        h1.bullet 안녕할까요?
+        img.w200.bullet(src="./images/ddong.png")
 
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2 
-          i.fa.fa-cloud-upload.fa-2x
-          br
-          | Remote 관련 명령어
-        pre.dark
-          code.language-bash
-            :markup
-              git remote
-              git remote -v
-              git remote add <name> <url>
-              git remote rm <name>
-              git remote rename <old-name> <new-name>
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2 
-          i.fa.fa-cloud-upload.fa-2x
-          br
-          | Github Rmote Push 데모
-        br
-        pre.dark
-          code.language-bash
-            :markup
-              git init
-              git add README.md
-              git commit -m "first commit"
-              git remote add origin git@github.com:yomybaby/test.git
-              git push -u origin master
-        pre.dark
-          code.language-bash
-            :markup
-              git remote add origin git@github.com:yomybaby/test.git
-              git push -u origin master
-      
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h4 
-          i.fa.fa-star.red
-          |  그 특별한 remote 이름
-        h2.bullet origin
-        br
-        h4.bullet
-          i.fa.fa-code-fork
-          |  Branch에서 master의 역할과 같이 
-          strong.red 기본(기준)
-          | 이 되는 것
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2 
-          i.fa.fa-cloud-download.fa-2x
-          br
-          | Fetch vs. Pull
-        p.bullet Remote에 있는 내용를 전부 가져오는 행위는 동일
-          br
-          | Local branch랑 합치면 Pull (내 작업 Working Directory에 영향)
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h4 다른 사람이 이미 remote를 만든 경우
-        h2 
-          i.fa.fa-cloud-download.fa-2x
-          br
-          | Clone 해보자
-        p Remote Repository를 내 local에다가 그대로 옮김
-        pre.dark
-          code.language-bash
-            :markup
-              git clone <repo>
-              git clone <repo> <directory>
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2 
-          i.fa.fa-exclamation.fa-2x
-          br
-          | 이제 협업할 준비가 되었다!
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2
-          i.fa.fa-question.fa-4x
-          br
-          | 어떤 정책으로 협업 할 것인가?
-
-      - smallTitle="Git Workflow"
-      section(data-bespoke-state='reveal',data-bespoke-hash="workflow")
-        h1
-          i.fa.fa-group.fa-3x
-        h3= smallTitle
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h4 Workflow = Branching 정책(전략)
-        h2 다양한 정책들..
-        ul.fa-ul
-          li 
-            i.fa.fa-group.fa-li
-            | Centralized Workflow
-          li
-            i.fa.fa-group.fa-li
-            | Feature Branch Workflow
-          li
-            i.fa.fa-group.fa-li
-            | Gitflow Workflow
-          li 
-            i.fa.fa-group.fa-li
-            | Forking Workflow
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle + " - Centralized Workflow"
-        h4 
-          i.fa.fa-group
-          |  Branch 하나만 쓸께요.
-        h2 Centralized Workflow
-        div
-          img(src="./images/11.svg")
-          
-
-      //- section(data-bespoke-state='emphatic')
-      //-   span.small_title.bullet= smallTitle + " - Centralized Workflow"
-      //-   h4 
-      //-     i.fa.fa-group
-      //-     |  Branch 하나만 쓸께요.
-      //-   h2 Centralized Workflow
-      //-   img.w300(src="https://www.atlassian.com/git/workflows/pageSections/00/contentFullWidth/0/tabs/00/pageSections/05/contentFullWidth/00/content_files/file1/document/git-workflow-svn-6.png")
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle + " - Feature Branch Workflow"
-        h4 
-          i.fa.fa-group
-          |  개발 단위(기능) 별로 branch 만들께요.
-        h2 Feature Branch Workflow
-        img(src="./images/featured.svg")
-
-      section(data-bespoke-state='emphatic',style="transition:none !important")
-        span.small_title.bullet= smallTitle + " - Feature Branch Workflow"
-        h4 
-          i.fa.fa-group
-          |  개발 단위(기능) 별로 branch 만들께요.
-        h2 Feature Branch Workflow
-        img(src="./images/featured-1.svg")
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle + " - Feature Branch Workflow"
-        h4 
-          i.fa.fa-group
-          |  Feature Branch Workflow. 심플하고 자유롭다.
-        h2.bullet 너무 자유로워서 관리의 어려움
-        img.bullet(src="./images/toomanyfeatured.svg")
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle + " - Gitflow Workflow"
-        h4 
-          i.fa.fa-group
-          |  개발서버(develop), 실서버(master) 구분할께요.
-        h2 Gitflow Workflow
-        p
-          a(href="http://danielkummer.github.io/git-flow-cheatsheet/index.ko_KR.html",target="_blank") 한글설명
-          | , &nbsp;
-          a(href="https://www.atlassian.com/git/workflows#!workflow-gitflow",target="_blank") Atlassian 설명
-        a(href="http://nvie.com/img/2009/12/Screen-shot-2009-12-24-at-11.32.03.png",target="_blank")
-          img.w300(src="http://nvie.com/img/2009/12/Screen-shot-2009-12-24-at-11.32.03.png")
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle + " - Gitflow Workflow"
-        h4 
-          i.fa.fa-group
-          |  개발서버(develop), 실서버(master) 구분할께요.
-        h2 
-          a(href="https://github.com/nvie/gitflow",target="_blank") 
-            | Gitflow Workflow
-        h3 매번 git branch, checkout, merger,
-          br
-          | branch 삭제 등을 해야한다고요?
-        br
-        p.bullet.red 네, 하지만 우리는 도구를 사용하는 동물!
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle + " - Forking Workflow"
-        h4 
-          i.fa.fa-group
-          |  Remote Repository도 각각 따로 둘께요. 공식 Repository는 관리자만!
-        h2 
-          | Forking Workflow
-        br
-        i.fa.fa-star.fa-2x.blue
-        img.w300(src="./images/fork.svg")
-        p
-          span.puple 개발자1
-          | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          span 관리자
-          | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          span.green 개발자2
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle + " - Forking Workflow"
-        h4 
-          i.fa.fa-group
-          |  개발자1, 개발자2가 완료했다는 것을 관리자에게 어떻게 말해주지?
-        h2.bullet
-          i.fa.fa-github  
-          i.fa.fa-bitbucket  
-          |  Pull Request
-        p.bullet 내 Repository의 이 Branch를
-          br
-          | 공식 Repository의 그 Branch에 Pull해주세요.
-        img.w400.bullet(src="https://www.atlassian.com/git/images/tutorials/collaborating/making-a-pull-request/pull-request-7.png")
-
-      section(data-bespoke-state='emphatic')
-        span.small_title.bullet= smallTitle
-        h2 Workflow를 위한 저장소 관리
-        ul
-          li Github
-          li Bitbucket
-          li Stash
-          li Gitlab
-          li Gitolite
-          li Gitorious
-          li tortoisegit
-          li ..
-
-      section(data-bespoke-state='reveal',data-bespoke-hash="wrapup")
-        h3 마무리!
-        h2.white
-          i.fa.fa-heart.red
-          |  Commit과 Branch의 이해
-        br
-        p.white 미처 다루지 못한 내용 : rebase, hook, .bash_profile ..
-        
       section(data-bespoke-state='success success2')
         h1 감사합니다.
-        h2.white
-          a(href="http://class.yostudio.kr",target="_blank").white class.yostudio.kr
-        br
-        h4.white
-          | 강의 후에도 강의 관련 질문 및 요청사항은 
-          a(href="http://class.yostudio.kr",target="_blank") class.yostudio.kr
-          | 에 올려주세요.
-
-      section(data-bespoke-state='emphatic', data-bespoke-hash="ref")
-        span.small_title.bullet 부록 1
-        h2 참고 자료 및 학습자료
-        ul.fa-ul
+        ul
           li
-            i.fa-li.fa.fa-link
-            a(href="http://atlassian.com/git",target="_blank") Atlassian Git Tutorials
+            i.fa.fa-envelope
+            a.white(href="mailto:jong@yostudio.kr")  jong@yostudio.kr
           li
-            i.fa-li.fa.fa-link
-            a(href="http://wildlyinaccurate.com/a-hackers-guide-to-git",target="_blank") A Hacker’s Guide to Git
-          li
-            i.fa-li.fa.fa-link
-            a(href="http://git-scm.com/book/ko",target="_blank") Pro Git
-          li
-            i.fa-li.fa.fa-link
-            a(href="http://pismute.github.io/whygitisbetter/",target="_blank") Why Git is Better then X
-          li
-            i.fa-li.fa.fa-link
-            a(href="http://www.insightbook.co.kr/wp-content/uploads/2013/04/git-%EC%B9%98%ED%8A%B8%EC%8B%9C%ED%8A%B8%ED%94%84%EB%A6%B0%ED%8A%B8.pdf",target="_blank") Git 작업 흐름과 명령어 (Cheet Sheet)
-          li
-            i.fa-li.fa.fa-link
-            a(href="http://learnbranch.urigit.com/",target="_blank") Git Branch 배우기
-            
-
+            i.fa.fa-twitter
+            a.white(href="https://twitter.com/yomybaby")  @yomybaby
+      
     // build:js scripts/scripts.js
     script(src='bower_components/bespoke.js/dist/bespoke.min.js')
     script(src='bower_components/bespoke-keys/dist/bespoke-keys.min.js')
